@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import chroma from "chroma-js";
+import { UseColorSchemeGenerator } from "../tools/shades-generator/useColorSchemeGenerator";
 import { CENTER_LUMINANCE, maxChroma } from "./color";
 import { Fn, lerp } from "./math";
-import { UseColorSchemeGenerator } from "../tools/generator/useColorSchemeGenerator";
 
 const renderGradient = () => {
   const canvas = document.createElement("canvas");
