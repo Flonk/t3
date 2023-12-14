@@ -8,27 +8,28 @@ import Root from "./routes/root/root";
 import { JsonPrettifier } from "./tools/json-prettifier/JsonPrettifier";
 import { ShadesGenerator } from "./tools/shades-generator/ShadesGenerator";
 import { Welcome } from "./tools/welcome/Welcome";
+import { BASE_URL } from "./tools/welcome/items";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: BASE_URL,
     element: <Root />,
     errorElement: <PageNotFound />,
     children: [
       {
-        path: "/",
+        path: BASE_URL + "/",
         element: <Welcome />,
       },
       {
-        path: "/tools/shades-generator",
+        path: BASE_URL + "/tools/shades-generator",
         element: <ShadesGenerator />,
       },
       {
-        path: "/tools/json-prettifier",
+        path: BASE_URL + "/tools/json-prettifier",
         element: <JsonPrettifier />,
       },
       {
-        path: "/blog/:slug",
+        path: BASE_URL + "/blog/:slug",
         element: <Blog />,
       },
     ],

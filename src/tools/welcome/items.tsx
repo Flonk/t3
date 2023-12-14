@@ -9,21 +9,23 @@ export type PageNavBlogItem = {
   to: string;
 };
 
+export const BASE_URL = "/t3";
+
 export const toolItems: PageNavToolItem[] = [
   {
     title: "JSON Prettifier",
-    to: "/tools/json-prettifier",
+    to: BASE_URL + "/tools/json-prettifier",
   },
   {
     title: "Tailwind Shades Generator",
-    to: "/tools/shades-generator",
+    to: BASE_URL + "/tools/shades-generator",
   },
 ];
 
 export const blogItems: PageNavBlogItem[] = [
   {
     title: "Hello World",
-    to: "/blog/1-hello-world",
+    to: BASE_URL + "/blog/1-hello-world",
     date: "2023-12-14",
   },
 ];

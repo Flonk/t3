@@ -1,10 +1,11 @@
 import chroma from "chroma-js";
 import { useEffect } from "react";
+import { BASE_URL } from "../../tools/welcome/items";
 import { ColorsProvider } from "../../ui/ColorsProvider";
 
 const Header = () => {
   return (
-    <a href="/" className="text-white">
+    <a href={BASE_URL} className="text-white">
       <div className="flex items-center justify-between bg-black text-white shadow-lg">
         <div className="px-4 py-1 font-mono">t3 interblag real-estate</div>
       </div>

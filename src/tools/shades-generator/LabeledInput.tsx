@@ -92,7 +92,6 @@ export type LabeledSelectProps = PropsWithChildren & {
 };
 
 export const LabeledSelect = ({
-  label,
   value,
   onChange,
   children,

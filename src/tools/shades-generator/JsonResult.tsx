@@ -1,7 +1,6 @@
-import chroma from "chroma-js";
 import { FC } from "react";
-import { UseColorSchemeGenerator } from "./useColorSchemeGenerator";
 import { Card } from "../../ui/Card";
+import { UseColorSchemeGenerator } from "./useColorSchemeGenerator";
 
 const COLOR_WEIGHTS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
 

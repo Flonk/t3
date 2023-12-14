@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { blogItems, toolItems } from "../tools/welcome/items";
+import { BASE_URL, blogItems, toolItems } from "../tools/welcome/items";
 
 export const PageHeader = () => {
   return (
     <Link
-      to="/"
+      to={BASE_URL}
       className="text-gray-100 bg-black fixed z-10 w-screen h-10 box-border"
     >
       <div className="flex items-center justify-between shadow-lg">

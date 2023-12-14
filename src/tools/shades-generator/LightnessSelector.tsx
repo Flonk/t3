@@ -1,11 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { FC, forwardRef, useEffect, useState } from "react";
-import { Card } from "../../ui/Card";
 import { tailwindLightnessCubic } from "../../util/color";
 import { Fn } from "../../util/math";
-import { LabeledSelect } from "./LabeledInput";
-import { useColors } from "../../ui/ColorsProvider";
 import { CardWithGraph } from "./CardWithGraph";
+import { LabeledSelect } from "./LabeledInput";
 
 export type LightnessType = "tailwind" | "linear";
 type LightnessTypeSelectorProps = {
@@ -79,7 +77,6 @@ export const LightnessSelector = forwardRef<
   HTMLCanvasElement,
   LightnessSelectorProps
 >(({ setLightnessFn }, ref) => {
-  const { colors } = useColors();
   return (
     <CardWithGraph header="Lightness" ref={ref}>
       <LightnessControlSelector setLightnessFn={setLightnessFn} />
