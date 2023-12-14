@@ -22,8 +22,8 @@ export const toolItems: PageNavToolItem[] = [
 
 export const blogItems: PageNavBlogItem[] = [
   {
-    title: "The married men of Nottingham",
-    to: "/blog/1-the-married-men-of-nottingham",
-    date: "2023-12-06",
+    title: "Hello World",
+    to: "/blog/1-hello-world",
+    date: "2023-12-14",
   },
 ];

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
+import { Blog } from "./routes/blog/blog";
 import PageNotFound from "./routes/error/pageNotFound";
 import Root from "./routes/root/root";
 import { JsonPrettifier } from "./tools/json-prettifier/JsonPrettifier";
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/tools/json-prettifier",
         element: <JsonPrettifier />,
+      },
+      {
+        path: "/blog/:slug",
+        element: <Blog />,
       },
     ],
   },
