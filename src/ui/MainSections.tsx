@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { BASE_URL, blogItems, toolItems } from "../tools/welcome/items";
+import { blogItems } from "../routes/blog/blogItems";
+import { BASE_URL, toolItems } from "../tools/welcome/items";
 
 export const PageHeader = () => {
   return (
@@ -44,7 +45,7 @@ export const PageSidebar = () => {
       </NavSection>
       <NavSection title="Blog 🖊️">
         <ul className="text-white">
-          {blogItems.map((item) => (
+          {Object.values(blogItems).map((item) => (
             <li className="flex flex-col" key={item.title}>
               <Link
                 to={item.to}
@@ -87,7 +88,7 @@ export const PageContentList = () => {
         </ul>
         <div className="text-black font-bold text-sm mt-8 mb-1">Blog 🖊️</div>
         <ul className="">
-          {blogItems.map((item) => (
+          {Object.values(blogItems).map((item) => (
             <li>
               <Link
                 to={item.to}

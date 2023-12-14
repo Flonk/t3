@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Card } from "../../ui/Card";
 import { ChromaSelector } from "./ChromaSelector";
 import { HueSelector } from "./HueSelector";
@@ -9,6 +9,10 @@ import { SwatchList } from "./SwatchList";
 import { useColorSchemeGenerator } from "./useColorSchemeGenerator";
 
 export const ShadesGenerator = () => {
+  useEffect(() => {
+    document.title = "T3 Shades Generator";
+  }, []);
+
   const ref = useRef<HTMLCanvasElement>(null);
   const lightnessRef = useRef<HTMLCanvasElement>(null);
   const chromaRef = useRef<HTMLCanvasElement>(null);

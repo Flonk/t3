@@ -1,7 +1,7 @@
-import { blogItems } from "../../../tools/welcome/items";
+import { getBlogPostMetadata } from "../blogItems";
 
 export const BlogPost_1_HelloWorld = () => {
-  const data = blogItems[0];
+  const data = getBlogPostMetadata(1);
   return (
     <>
       <div className="max-w-prose w-full">
