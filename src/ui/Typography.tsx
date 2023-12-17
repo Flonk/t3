@@ -1,7 +1,8 @@
 // typography
 
-import { PropsWithChildren } from "react";
+import { ElementType, PropsWithChildren } from "react";
 import { Link } from "react-router-dom";
+import { unsafeCast } from "../util/util";
 import { Styleable } from "./Styleable";
 import { TRANSITION_SM } from "./transitions";
 
@@ -18,16 +19,18 @@ export const TYPOGRAPHY_STYLES = {
   overline: "text-xs tracking-widest uppercase text-gray-500",
   link: `text-lime-600 hover:text-lime-800 ${TRANSITION_SM}`,
   inlineLink: `text-lime-600 underline hover:text-lime-800 ${TRANSITION_SM}`,
-  button: "text-xs font-bold uppercase leading-none",
+  button:
+    "text-xs font-bold uppercase leading-none flex items-center justify-center",
 };
 
 type TypographyProps = Styleable &
   PropsWithChildren & {
-    as?: "header" | "div";
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    as?: "header" | "div" | (string & {});
   };
 
 export const H1 = ({ children, className, as }: TypographyProps) => {
-  const Component = as ?? "h1";
+  const Component = unsafeCast<ElementType>(as ?? "h1");
   return (
     <Component className={`${TYPOGRAPHY_STYLES.h1} ${className}`}>
       {children}
@@ -36,7 +39,7 @@ export const H1 = ({ children, className, as }: TypographyProps) => {
 };
 
 export const H2 = ({ children, className, as }: TypographyProps) => {
-  const Component = as ?? "h2";
+  const Component = unsafeCast<ElementType>(as ?? "h2");
   return (
     <Component className={`${TYPOGRAPHY_STYLES.h2} ${className}`}>
       {children}
@@ -45,7 +48,7 @@ export const H2 = ({ children, className, as }: TypographyProps) => {
 };
 
 export const H3 = ({ children, className, as }: TypographyProps) => {
-  const Component = as ?? "h3";
+  const Component = unsafeCast<ElementType>(as ?? "h3");
   return (
     <Component className={`${TYPOGRAPHY_STYLES.h3} ${className}`}>
       {children}
@@ -54,7 +57,7 @@ export const H3 = ({ children, className, as }: TypographyProps) => {
 };
 
 export const H4 = ({ children, className, as }: TypographyProps) => {
-  const Component = as ?? "h4";
+  const Component = unsafeCast<ElementType>(as ?? "h4");
   return (
     <Component className={`${TYPOGRAPHY_STYLES.h4} ${className}`}>
       {children}
@@ -63,7 +66,7 @@ export const H4 = ({ children, className, as }: TypographyProps) => {
 };
 
 export const H5 = ({ children, className, as }: TypographyProps) => {
-  const Component = as ?? "h5";
+  const Component = unsafeCast<ElementType>(as ?? "h5");
   return (
     <Component className={`${TYPOGRAPHY_STYLES.h5} ${className}`}>
       {children}
@@ -72,7 +75,7 @@ export const H5 = ({ children, className, as }: TypographyProps) => {
 };
 
 export const H6 = ({ children, className, as }: TypographyProps) => {
-  const Component = as ?? "h6";
+  const Component = unsafeCast<ElementType>(as ?? "h6");
   return (
     <Component className={`${TYPOGRAPHY_STYLES.h6} ${className}`}>
       {children}
@@ -81,7 +84,7 @@ export const H6 = ({ children, className, as }: TypographyProps) => {
 };
 
 export const Body1 = ({ children, className, as }: TypographyProps) => {
-  const Component = as ?? "div";
+  const Component = unsafeCast<ElementType>(as ?? "div");
   return (
     <Component className={`${TYPOGRAPHY_STYLES.body1} ${className}`}>
       {children}
@@ -90,7 +93,7 @@ export const Body1 = ({ children, className, as }: TypographyProps) => {
 };
 
 export const Body2 = ({ children, className, as }: TypographyProps) => {
-  const Component = as ?? "div";
+  const Component = unsafeCast<ElementType>(as ?? "div");
   return (
     <Component className={`${TYPOGRAPHY_STYLES.body2} ${className}`}>
       {children}
@@ -99,7 +102,7 @@ export const Body2 = ({ children, className, as }: TypographyProps) => {
 };
 
 export const Caption = ({ children, className, as }: TypographyProps) => {
-  const Component = as ?? "div";
+  const Component = unsafeCast<ElementType>(as ?? "div");
   return (
     <Component className={`${TYPOGRAPHY_STYLES.caption} ${className}`}>
       {children}
@@ -108,7 +111,7 @@ export const Caption = ({ children, className, as }: TypographyProps) => {
 };
 
 export const Overline = ({ children, className, as }: TypographyProps) => {
-  const Component = as ?? "div";
+  const Component = unsafeCast<ElementType>(as ?? "div");
   return (
     <Component className={`${TYPOGRAPHY_STYLES.overline} ${className}`}>
       {children}
