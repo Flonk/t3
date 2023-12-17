@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { getBlogPostMetadata } from "../../allBlogPosts";
 import { BlogPost_1_HelloWorld } from "./articles/1-hello-world";
-import { getBlogPostMetadata } from "./blogItems";
+import { BlogPost_2_DesignDocument } from "./articles/2-design-document";
 
 const getBlogPost = (id: number) => {
   switch (id) {
+    case 2:
+      return BlogPost_2_DesignDocument();
     case 1:
     default:
       return BlogPost_1_HelloWorld();
-      break;
   }
 };
 
@@ -18,7 +20,7 @@ export const Blog = () => {
   const metaData = getBlogPostMetadata(id);
 
   useEffect(() => {
-    document.title = `T3 - ${metaData.title}`;
+    document.title = `${metaData.title} - T3`;
   }, [metaData.title]);
 
   return <div className="w-[65ch]">{getBlogPost(id)}</div>;

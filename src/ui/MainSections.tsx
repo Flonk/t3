@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import { blogItems } from "../routes/blog/blogItems";
-import { BASE_URL, toolItems } from "../tools/welcome/items";
+import { ALL_BLOG_POSTS } from "../allBlogPosts";
+import { ALL_TOOLS, BASE_URL } from "../allTools";
+import { H6, InternalLink } from "./Typography";
 
 export const PageHeader = () => {
   return (
     <Link
       to={BASE_URL}
-      className="text-gray-100 bg-black fixed z-10 w-screen h-10 box-border"
+      className="text-gray-100 bg-black fixed z-10 w-screen h-10 box-border hover:text-lime-200 flex justify-center"
     >
-      <div className="flex items-center justify-between shadow-lg">
+      <div className="flex items-center justify-between shadow-lg max-w-screen-huge w-full">
         <div className="px-4 py-2 font-mono">t3 interblag real-estate</div>
       </div>
     </Link>
@@ -23,7 +24,12 @@ type NavSectionProps = {
 const NavSection = ({ title, children }: NavSectionProps) => {
   return (
     <section className="mb-8">
-      <header className="font-bold upper text-gray-500">{title}</header>
+      <H6
+        as="header"
+        className="font-bold upper border-b border-gray-300 pb-1 mb-1"
+      >
+        {title}
+      </H6>
       <ul className="text-white">{children}</ul>
     </section>
   );
@@ -31,23 +37,23 @@ const NavSection = ({ title, children }: NavSectionProps) => {
 
 export const PageSidebar = () => {
   return (
-    <nav className="bg-gray-100 border-r border-gray-200 px-4 py-4 w-56 text-sm">
+    <nav className="bg-gray-50 border-r border-gray-200 px-4 py-4 w-56 text-sm shadow-inner">
       <NavSection title="Tools 🔨">
         <ul className="text-white">
-          {toolItems.map((item, index) => (
+          {ALL_TOOLS.map((item, index) => (
             <li key={index}>
-              <Link to={item.to}>
+              <InternalLink to={item.path}>
                 <div className="py-1">{item.title}</div>
-              </Link>
+              </InternalLink>
             </li>
           ))}
         </ul>
       </NavSection>
       <NavSection title="Blog 🖊️">
         <ul className="text-white">
-          {Object.values(blogItems).map((item) => (
+          {Object.values(ALL_BLOG_POSTS).map((item) => (
             <li className="flex flex-col" key={item.title}>
-              <Link
+              <InternalLink
                 to={item.to}
                 className="text-black hover:text-gray-700"
                 title={item.title}
@@ -58,7 +64,7 @@ export const PageSidebar = () => {
                   </div>
                   <div className="text-gray-500 text-xs">{item.date}</div>
                 </div>
-              </Link>
+              </InternalLink>
             </li>
           ))}
         </ul>
@@ -74,23 +80,23 @@ export const PageContentList = () => {
       <div className="w-full lg:hidden">
         <div className="text-black font-bold text-sm mb-1">Tools 🔨</div>
         <ul className="">
-          {toolItems.map((item, index) => (
+          {ALL_TOOLS.map((item, index) => (
             <li>
-              <Link
-                to={item.to}
+              <InternalLink
+                to={item.path}
                 key={index}
                 className="text-black hover:text-gray-600"
               >
                 <div className="py-1">{item.title}</div>
-              </Link>
+              </InternalLink>
             </li>
           ))}
         </ul>
         <div className="text-black font-bold text-sm mt-8 mb-1">Blog 🖊️</div>
         <ul className="">
-          {Object.values(blogItems).map((item) => (
+          {Object.values(ALL_BLOG_POSTS).map((item) => (
             <li>
-              <Link
+              <InternalLink
                 to={item.to}
                 key={item.title}
                 className="text-black hover:text-gray-600"
@@ -101,7 +107,7 @@ export const PageContentList = () => {
                   </div>
                   <div className="text-gray-500 text-xs">{item.date}</div>
                 </div>
-              </Link>
+              </InternalLink>
             </li>
           ))}
         </ul>

@@ -1,17 +1,18 @@
-import { getBlogPostMetadata } from "../blogItems";
+import { getBlogPostMetadata } from "../../../allBlogPosts";
+import { Body1, Caption, H1 } from "../../../ui/Typography";
 
 export const BlogPost_1_HelloWorld = () => {
   const data = getBlogPostMetadata(1);
   return (
     <>
       <div className="max-w-prose w-full">
-        <h1 className="text-3xl font-bold mt-8">{data.title}</h1>
-        <p className="text-xs text-gray-500">{data.date}</p>
-        <p className="mt-4">
+        <H1 className="mb-0">{data.title}</H1>
+        <Caption className="mb-8">{data.date}</Caption>
+        <Body1>
           This thing is live! Good day and welcome to all of you. Here, have
           some blind text!
-        </p>
-        <p className="mt-4">
+        </Body1>
+        <Body1>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -19,7 +20,7 @@ export const BlogPost_1_HelloWorld = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        </Body1>
       </div>
     </>
   );

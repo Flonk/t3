@@ -10,7 +10,7 @@ import { useColorSchemeGenerator } from "./useColorSchemeGenerator";
 
 export const ShadesGenerator = () => {
   useEffect(() => {
-    document.title = "T3 Shades Generator";
+    document.title = "Tailwind Shades Generator - T3";
   }, []);
 
   const ref = useRef<HTMLCanvasElement>(null);

@@ -1,6 +1,6 @@
 import chroma from "chroma-js";
 import { useEffect } from "react";
-import { BASE_URL } from "../../tools/welcome/items";
+import { BASE_URL } from "../../allTools";
 import { ColorsProvider } from "../../ui/ColorsProvider";
 
 const Header = () => {
