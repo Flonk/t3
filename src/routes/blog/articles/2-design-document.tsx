@@ -12,7 +12,7 @@ import {
   Overline,
   TYPOGRAPHY_STYLES,
 } from "../../../ui/Typography";
-import { Button } from "../../../ui/button/Button";
+import { Button, ButtonSmall } from "../../../ui/button/Button";
 
 export const BlogPost_2_DesignDocument = () => {
   const data = getBlogPostMetadata(2);
@@ -56,7 +56,10 @@ export const BlogPost_2_DesignDocument = () => {
           <div className={TYPOGRAPHY_STYLES.link}>Link</div>
         </div>
         <H2>Buttons</H2>
-        <Button title="Button" onClick={() => {}} />
+        <div>
+          <Button title="Button" onClick={() => {}} className="mb-1" />
+          <ButtonSmall title="Button Small" onClick={() => {}} />
+        </div>
       </div>
     </>
   );

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { TextArea } from "../../ui/TextArea";
 import { H1 } from "../../ui/Typography";
 import { Button } from "../../ui/button/Button";
+import { $ } from "../../util/dom";
 import { safeCast } from "../../util/util";
 
 export const JsonPrettifier = () => {
@@ -15,19 +16,16 @@ export const JsonPrettifier = () => {
       <TextArea
         name="input"
         id="input"
-        className="border border-gray-200 rounded-md w-full text-xs font-mono overflow-x-scroll whitespace-pre h-20"
+        className="whitespace-pre font-mono h-20"
         placeholder="Paste your JSON here."
       ></TextArea>
       <div className="flex my-4">
         <Button
           className="mr-1"
           onClick={() => {
-            const input = document.getElementById(
-              "input"
-            ) as HTMLTextAreaElement;
-            const output = document.getElementById(
-              "output"
-            ) as HTMLTextAreaElement;
+            const input = $<HTMLTextAreaElement>("#input");
+            const output = $<HTMLTextAreaElement>("#output");
+
             try {
               output.classList.add("whitespace-pre");
               output.value = JSON.stringify(JSON.parse(input.value), null, 2);
@@ -37,6 +35,22 @@ export const JsonPrettifier = () => {
             }
           }}
           title="Prettify"
+        />
+        <Button
+          className="mr-1"
+          onClick={() => {
+            const input = $<HTMLTextAreaElement>("#input");
+            const output = $<HTMLTextAreaElement>("#output");
+
+            try {
+              output.classList.add("whitespace-pre");
+              output.value = JSON.stringify(JSON.parse(input.value));
+            } catch (e) {
+              output.classList.remove("whitespace-pre");
+              output.value = safeCast(e).message;
+            }
+          }}
+          title="Minify"
         />
         <Button
           className=""
@@ -54,7 +68,7 @@ export const JsonPrettifier = () => {
       <TextArea
         name="output"
         id="output"
-        className="border border-gray-200 rounded-md w-full mt-4 h-64 text-xs font-mono overflow-x-scroll whitespace-pre"
+        className="whitespace-pre font-mono h-64"
         placeholder="Prettified JSON will appear here."
       ></TextArea>
     </div>

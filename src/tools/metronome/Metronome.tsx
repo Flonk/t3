@@ -57,7 +57,7 @@ export const Metronome = () => {
               max="220"
               id="bpm"
               value={bpm}
-              className="w-full rounded-sm"
+              className="w-full rounded-sm mb-2"
               onChange={(e) => setBpm(parseInt(e.target.value))}
             ></input>
             <div className="flex items-center">

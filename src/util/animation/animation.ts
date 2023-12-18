@@ -67,7 +67,7 @@ export const createAnimationLoop = (
       if (!stop) return;
       stop = false;
       clock.warp(preStopWarp);
-      requestAnimationFrame(loop);
+      animationFrameHandle = requestAnimationFrame(loop);
     },
     clock,
   };
