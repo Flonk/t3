@@ -1,5 +1,6 @@
 import QRCode from "qrcode";
 import { useEffect, useRef, useState } from "react";
+import { Inset } from "../../ui/Inset";
 import { TextArea } from "../../ui/TextArea";
 import { H1 } from "../../ui/Typography";
 
@@ -25,7 +26,7 @@ export const QrGenerator = () => {
   const [value, setValue] = useState("T3 rocks!");
 
   return (
-    <div className="flex flex-col items-center min-h-screen px-2 md:px-8 max-w-prose grow">
+    <div className="flex flex-col items-center min-h-screen px-2 md:px-8 max-w-prose w-full grow-0 overflow-hidden">
       <H1 className="w-full">QR Code Generator</H1>
       <TextArea
         name="input"
@@ -37,7 +38,11 @@ export const QrGenerator = () => {
       >
         {value}
       </TextArea>
-      <QrCode value={value} />
+      <Inset className="overflow-scroll">
+        <div className="flex justify-center">
+          <QrCode value={value} />
+        </div>
+      </Inset>
     </div>
   );
 };

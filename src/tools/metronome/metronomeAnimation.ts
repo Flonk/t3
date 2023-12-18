@@ -1,4 +1,4 @@
-import { Clock } from "../../util/animation/animation";
+import { Clock } from "../../util/animation/clock";
 import { easing } from "../../util/animation/easing";
 import { getAudioContext } from "../../util/audiocontext/audiocontext";
 import { tsk } from "../../util/audiocontext/whiteNoise";
@@ -28,7 +28,7 @@ export const metronomeAnimation: MetronomeAnimationCallback = (
 
   const BEAT_PROGRESS = (time / MS_PER_BEAT) % 1;
   const nextBeat = ((1 - BEAT_PROGRESS) * MS_PER_BEAT) / clock.timeWarp;
-  if (nextBeat < 100 && schedulable) {
+  if (nextBeat < 50 && schedulable) {
     tsk(actx, actx.destination, actx.currentTime + nextBeat / MS_PER_SECOND);
     schedulable = false;
   } else if (BEAT_PROGRESS < 0.1) {

@@ -17,17 +17,21 @@ export const Welcome = () => {
         loaded with ads and cookie banners and popups.
       </Body1>
       <Body1>
-        Got me thinking, with the amount of time I have spent googling tools,
-        could I have just built and hosted them myself?
+        Somehow doing the simplest things turn into a 10 minute ordeal, when
+        generating a QR code should be doable in around 20 milliseconds. The
+        worst thing is when they hit you with loading bars... <em>nothing</em>{" "}
+        is loading there! They just put in fake waiting times to show you more
+        ads or sell you premium features or whatever.
       </Body1>
       <Body1>
-        Well, probably yes. So I'm building them! And since they're all online,
-        you might as well use them too. :) Take a look, drop a bookmark, and
-        enjoy.
+        Well. Building a QR code generator in this day and age takes only around
+        10 minutes aswell, so instead of complaining I decided to do just that,
+        aswell as building lots of other tools. Here they are, for you and me to
+        enjoy. :)
       </Body1>
       <Body1>
-        All of the code runs on your device, client-side. No data is ever being
-        sent to a server or collected or whatever. And you can trust me on this,
+        All of the code runs on your device. No data is ever being sent to a
+        server or collected or whatever. And you can trust me on this,
         pinky-promise; or you can{" "}
         <ExternalInlineLink to="https://github.com/Flonk/t3">
           check the source code yourself over at github

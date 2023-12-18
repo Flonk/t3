@@ -4,7 +4,8 @@ import { HiMiniMinus, HiMiniPlus, HiPause, HiPlay } from "react-icons/hi2";
 import { Inset } from "../../ui/Inset";
 import { H1, Overline } from "../../ui/Typography";
 import { BaseButtonSmall } from "../../ui/button/Button";
-import { Clock, createAnimationLoop } from "../../util/animation/animation";
+import { createAnimationLoop } from "../../util/animation/animation";
+import { Clock } from "../../util/animation/clock";
 import { ASSUMED_BPM, metronomeAnimation } from "./metronomeAnimation";
 
 export const Metronome = () => {
@@ -37,7 +38,7 @@ export const Metronome = () => {
 
   useEffect(() => {
     animation?.clock.warp(bpm / ASSUMED_BPM);
-  }, [animation?.clock, bpm]);
+  }, [animation, bpm]);
 
   useEffect(() => {
     if (!play) animation?.stop();

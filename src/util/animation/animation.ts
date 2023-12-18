@@ -1,47 +1,21 @@
-export type Clock = {
-  tick: () => number;
-  warp: (factor?: number) => void;
-  get timeWarp(): number;
-};
-
-export const createClock = (timeWarp = 1): Clock => {
-  let starting_time = Date.now(),
-    offset = 0;
-
-  const clock = {
-    tick: () => (Date.now() - starting_time) * timeWarp + offset,
-
-    warp: (factor = 1) => {
-      offset = clock.tick();
-      starting_time = Date.now();
-      timeWarp = factor;
-    },
-
-    get timeWarp() {
-      return timeWarp;
-    },
-  };
-
-  return clock;
-};
+import { StoppableClock, createStoppableClock } from "./clock";
 
 export type AnimationLoopCallback = (
   time: number,
   interval: number,
-  clock: Clock
+  clock: StoppableClock
 ) => void;
 export type AnimationLoop = {
   start: () => void;
   stop: () => void;
-  clock: Clock;
+  clock: StoppableClock;
 };
 
 export const createAnimationLoop = (
   callback: AnimationLoopCallback
 ): AnimationLoop => {
-  const clock = createClock();
+  const clock = createStoppableClock();
   let time = clock.tick();
-  let preStopWarp = 0;
   let stop = false;
   let animationFrameHandle: number;
 
@@ -60,13 +34,12 @@ export const createAnimationLoop = (
       if (stop) return;
       stop = true;
       cancelAnimationFrame(animationFrameHandle);
-      preStopWarp = clock.timeWarp;
-      clock.warp(0);
+      clock.stop();
     },
     start: () => {
       if (!stop) return;
       stop = false;
-      clock.warp(preStopWarp);
+      clock.start();
       animationFrameHandle = requestAnimationFrame(loop);
     },
     clock,
