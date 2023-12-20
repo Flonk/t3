@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { PageContentList } from "../../ui/MainSections";
+import { Page } from "../../ui/Page";
 import { Body1, ExternalInlineLink, H1 } from "../../ui/Typography";
 
 export const Welcome = () => {
@@ -8,7 +9,7 @@ export const Welcome = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen px-8 max-w-prose">
+    <Page title="T3 Interblag Real-Estate" className="max-w-prose">
       <H1>T3 Interblag Real-Estate.</H1>
       <Body1>Ads have ruined the web.</Body1>
       <Body1>
@@ -39,6 +40,6 @@ export const Welcome = () => {
         and convince yourself.
       </Body1>
       <PageContentList />
-    </div>
+    </Page>
   );
 };
