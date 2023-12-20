@@ -47,7 +47,7 @@ export const Metronome = () => {
   }, [animation, bpm, play]);
 
   return (
-    <Page title="Metronome" className="max-w-xl">
+    <Page title="Metronome" className="max-w-2xl">
       <H1 className="w-full">Metronome</H1>
       <div className="flex w-full">
         <Inset className="grow mr-2">

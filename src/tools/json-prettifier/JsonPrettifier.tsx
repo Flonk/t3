@@ -7,7 +7,7 @@ import { safeCast } from "../../util/util";
 
 export const JsonPrettifier = () => {
   return (
-    <Page title="JSON Prettifier" className="max-w-3xl">
+    <Page title="JSON Prettifier" className="max-w-2xl">
       <H1 className="w-full">JSON Prettifier</H1>
       <TextArea
         name="input"
