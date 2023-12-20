@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Page } from "../../ui/Page";
 import { TextArea } from "../../ui/TextArea";
 import { H1 } from "../../ui/Typography";
 import { Button } from "../../ui/button/Button";
@@ -6,12 +6,8 @@ import { $ } from "../../util/dom";
 import { safeCast } from "../../util/util";
 
 export const JsonPrettifier = () => {
-  useEffect(() => {
-    document.title = "JSON Prettifier - T3";
-  }, []);
-
   return (
-    <div className="flex flex-col items-center min-h-screen px-8 max-w-prose grow">
+    <Page title="JSON Prettifier" className="max-w-3xl">
       <H1 className="w-full">JSON Prettifier</H1>
       <TextArea
         name="input"
@@ -71,6 +67,6 @@ export const JsonPrettifier = () => {
         className="whitespace-pre font-mono h-64"
         placeholder="Prettified JSON will appear here."
       ></TextArea>
-    </div>
+    </Page>
   );
 };

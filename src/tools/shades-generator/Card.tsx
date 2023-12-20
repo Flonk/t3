@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { Styleable } from "./Styleable";
+import { Styleable } from "../../ui/Styleable";
 
 type CardProps = Styleable &
   PropsWithChildren & {

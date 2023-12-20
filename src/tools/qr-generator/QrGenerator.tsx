@@ -1,8 +1,9 @@
 import QRCode from "qrcode";
 import { useEffect, useRef, useState } from "react";
 import { Inset } from "../../ui/Inset";
+import { Page } from "../../ui/Page";
 import { TextArea } from "../../ui/TextArea";
-import { H1 } from "../../ui/Typography";
+import { H1, Overline } from "../../ui/Typography";
 
 type QrCodeProps = {
   value: string;
@@ -19,15 +20,12 @@ const QrCode = ({ value }: QrCodeProps) => {
 };
 
 export const QrGenerator = () => {
-  useEffect(() => {
-    document.title = "JSON Prettifier - T3";
-  }, []);
-
   const [value, setValue] = useState("T3 rocks!");
 
   return (
-    <div className="flex flex-col items-center min-h-screen px-2 md:px-8 max-w-prose w-full grow-0 overflow-hidden">
+    <Page title="QR Code Generator" className="max-w-2xl">
       <H1 className="w-full">QR Code Generator</H1>
+      <Overline className="w-full">Input</Overline>
       <TextArea
         name="input"
         id="input"
@@ -38,11 +36,12 @@ export const QrGenerator = () => {
       >
         {value}
       </TextArea>
-      <Inset className="overflow-scroll">
+      <Overline className="w-full">Output</Overline>
+      <Inset className="w-full overflow-scroll">
         <div className="flex justify-center">
           <QrCode value={value} />
         </div>
       </Inset>
-    </div>
+    </Page>
   );
 };

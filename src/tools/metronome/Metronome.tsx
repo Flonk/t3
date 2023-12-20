@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { HiMiniMinus, HiMiniPlus, HiPause, HiPlay } from "react-icons/hi2";
 import { Inset } from "../../ui/Inset";
+import { Page } from "../../ui/Page";
 import { H1, Overline } from "../../ui/Typography";
 import { BaseButtonSmall } from "../../ui/button/Button";
 import { createAnimationLoop } from "../../util/animation/animation";
@@ -46,9 +47,9 @@ export const Metronome = () => {
   }, [animation, bpm, play]);
 
   return (
-    <div className="flex flex-col min-h-screen px-8 max-w-prose grow">
-      <H1>Metronome</H1>
-      <div className="flex">
+    <Page title="Metronome" className="max-w-xl">
+      <H1 className="w-full">Metronome</H1>
+      <div className="flex w-full">
         <Inset className="grow mr-2">
           <Overline as="h2">BPM</Overline>
           <div className="flex flex-col items-center">
@@ -78,15 +79,15 @@ export const Metronome = () => {
             </div>
           </div>
         </Inset>
-        <Inset className="flex items-center justify-center">
+        <Inset className="flex items-center justify-center py-0">
           <canvas
             ref={canvasRef}
-            width={40}
-            height={100}
-            style={{ width: "40px", height: "100px" }}
+            width={30}
+            height={105}
+            style={{ width: "30px", height: "105px" }}
           ></canvas>
         </Inset>
       </div>
-    </div>
+    </Page>
   );
 };

@@ -22,9 +22,9 @@ export const BlogPost_2_DesignDocument = () => {
         <H1 className="mb-0">{data.title}</H1>
         <Caption className="mb-8">{data.date}</Caption>
         <Body1>
-          This is a design document for the T3 project. It is a living document
-          where I will showcase all UI components used in the project, as well
-          as other design considerations.
+          This is a design document for the T3 project. It showcases all UI
+          components used in the project, as well as other design
+          considerations.
         </Body1>
         <H2>Typography</H2>
         <div className="p-4 rounded-sm border border-gray-200 shadow-inner">

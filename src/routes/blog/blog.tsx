@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getBlogPostMetadata } from "../../allBlogPosts";
+import { Page } from "../../ui/Page";
 import { BlogPost_1_HelloWorld } from "./articles/1-hello-world";
 import { BlogPost_2_DesignDocument } from "./articles/2-design-document";
 
@@ -19,9 +19,5 @@ export const Blog = () => {
   const id = Number(data.slug?.split("-").shift() ?? "1");
   const metaData = getBlogPostMetadata(id);
 
-  useEffect(() => {
-    document.title = `${metaData.title} - T3`;
-  }, [metaData.title]);
-
-  return <div className="w-[65ch]">{getBlogPost(id)}</div>;
+  return <Page title={metaData.title}>{getBlogPost(id)}</Page>;
 };

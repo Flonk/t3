@@ -37,7 +37,7 @@ const NavSection = ({ title, children }: NavSectionProps) => {
 
 export const PageSidebar = () => {
   return (
-    <nav className="bg-gray-50 border-r border-gray-200 px-4 py-4 w-56 text-sm shadow-inner">
+    <nav className="bg-gray-50 border-r border-gray-200 px-4 w-56 text-sm shadow-inner hidden lg:block">
       <NavSection title="Tools 🔨">
         <ul className="text-white">
           {ALL_TOOLS.map((item, index) => (
@@ -118,7 +118,7 @@ export const PageContentList = () => {
 
 export const PageFooter = () => {
   return (
-    <div className="px-4 py-2 w-full flex justify-center text-xs">
+    <div className="px-4 py-2 mt-4 w-full flex justify-center text-xs">
       Made with &lt;3 by Florian Schindler
     </div>
   );
