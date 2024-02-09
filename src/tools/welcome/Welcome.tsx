@@ -26,16 +26,15 @@ export const Welcome = () => {
       </Body1>
       <Body1>
         Well. Building a QR code generator in this day and age takes only around
-        10 minutes aswell, so instead of complaining I decided to do just that,
-        aswell as building lots of other tools. Here they are, for you and me to
-        enjoy. :)
+        10 minutes aswell, so instead of complaining I decided to do just that.
+        So here's a collection of tools, for you and me to enjoy. :)
       </Body1>
       <Body1>
         All of the code runs on your device. No data is ever being sent to a
         server or collected or whatever. And you can trust me on this,
         pinky-promise; or you can{" "}
         <ExternalInlineLink to="https://github.com/Flonk/t3">
-          check the source code yourself over at github
+          check the source code over at github
         </ExternalInlineLink>{" "}
         and convince yourself.
       </Body1>

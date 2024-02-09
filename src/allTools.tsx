@@ -1,3 +1,4 @@
+import { ImageConverter } from "./tools/image-converter/ImageConverter";
 import { JsonPrettifier } from "./tools/json-prettifier/JsonPrettifier";
 import { Metronome } from "./tools/metronome/Metronome";
 import { QrGenerator } from "./tools/qr-generator/QrGenerator";
@@ -25,5 +26,10 @@ export const ALL_TOOLS = [
     title: "QR Generator",
     path: BASE_URL + "/tools/qr-generator",
     element: <QrGenerator />,
+  },
+  {
+    title: "Image Converter",
+    path: BASE_URL + "/tools/image-converter",
+    element: <ImageConverter />,
   },
 ].sort((a, b) => a.title.localeCompare(b.title));
