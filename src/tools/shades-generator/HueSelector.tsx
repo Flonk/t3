@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FC, forwardRef, useEffect, useState } from "react";
 import { fitQuadraticIntoThreePoints } from "../../util/math";
-import { CardWithGraph } from "./CardWithGraph";
+import { InsetWithGraph } from "./CardWithGraph";
 import { LabeledRange, LabeledSelect, PrimaryButton } from "./LabeledInput";
 import { UseColorSchemeGenerator } from "./useColorSchemeGenerator";
 
@@ -192,7 +192,7 @@ export const HueSelector = forwardRef<RefType, HueSelectorProps>(
     const { hue: baseHue, setHue: setBaseHue } = generator;
     const { hue, graph } = ref as any;
     return (
-      <CardWithGraph
+      <InsetWithGraph
         header="Hue"
         ref={hue}
         belowHeader={
@@ -200,7 +200,7 @@ export const HueSelector = forwardRef<RefType, HueSelectorProps>(
         }
       >
         <HueControlSelector generator={generator} />
-      </CardWithGraph>
+      </InsetWithGraph>
     );
   }
 );

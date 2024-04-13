@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Card } from "./Card";
+import { Inset } from "../../ui/Inset";
 import { UseColorSchemeGenerator } from "./useColorSchemeGenerator";
 
 const COLOR_WEIGHTS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
@@ -11,7 +11,7 @@ type JsonResultProps = {
 export const JsonResult: FC<JsonResultProps> = ({ generator }) => {
   const colorName = generator.baseColorName.toLocaleLowerCase();
   return (
-    <Card className="w-72 text-left">
+    <Inset className="w-72 text-left mb-4">
       <h3
         className="text-md font-bold text-left"
         style={{
@@ -38,6 +38,6 @@ export const JsonResult: FC<JsonResultProps> = ({ generator }) => {
         })}
         <span>{"}"}</span>
       </div>
-    </Card>
+    </Inset>
   );
 };

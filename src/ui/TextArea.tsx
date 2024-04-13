@@ -26,7 +26,7 @@ export const TextArea = ({
 }: TextAreaProps) => {
   return (
     <textarea
-      className={`w-full bg-transparent rounded-sm p-1 text-xs shadow-inner border border-gray-300 hover:border-lime-800 ${TRANSITION_SM} ${className}`}
+      className={`w-full bg-transparent rounded-sm p-1 text-xs shadow-inner border border-gray-300 hover:border-pizza-800 ${TRANSITION_SM} ${className}`}
       placeholder={placeholder}
       name={name}
       id={id}

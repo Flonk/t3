@@ -48,7 +48,7 @@ export const metronomeAnimation: MetronomeAnimationCallback = (
   const paddedWidth = width - circleDiameter;
 
   ctx.fillStyle = "#fff";
-  ctx.strokeStyle = "#4d7c0f";
+  ctx.strokeStyle = "#b27c00";
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.arc(

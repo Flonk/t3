@@ -7,18 +7,18 @@ import { Styleable } from "./Styleable";
 import { TRANSITION_SM } from "./transitions";
 
 export const TYPOGRAPHY_STYLES = {
-  h1: "text-3xl font-bold my-6 leading-none",
-  h2: "text-2xl font-bold my-6 leading-none",
-  h3: "text-xl font-bold my-6 leading-none",
-  h4: "text-lg font-bold my-6 leading-none",
-  h5: "text-base font-bold my-6 leading-none",
-  h6: "text-xs font-bold my-6 uppercase tracking-wide leading-none",
+  h1: "text-xs text-pizza-600 font-semibold mb-6 leading-none tracking-wide",
+  h2: "text-2xl font-bold mb-6 leading-none",
+  h3: "text-xl font-bold mb-5 leading-none",
+  h4: "text-lg font-bold mb-4 leading-none",
+  h5: "text-base font-bold mb-3 leading-none",
+  h6: "text-xs font-bold mb-2 uppercase tracking-wide leading-none",
   body1: "text-base mb-6",
   body2: "text-sm mb-6",
   caption: "text-xs italic",
   overline: "text-xs tracking-widest uppercase text-gray-500",
-  link: `text-lime-600 hover:text-lime-800 ${TRANSITION_SM}`,
-  inlineLink: `text-lime-600 underline hover:text-lime-800 ${TRANSITION_SM}`,
+  link: `text-pizza-600 hover:text-pizza-800 ${TRANSITION_SM}`,
+  inlineLink: `text-pizza-600 underline hover:text-pizza-800 ${TRANSITION_SM}`,
   button:
     "text-xs font-bold uppercase leading-none flex items-center justify-center",
 };

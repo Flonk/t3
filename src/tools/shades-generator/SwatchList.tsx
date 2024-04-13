@@ -1,6 +1,6 @@
 import chroma from "chroma-js";
 import { FC } from "react";
-import { Card } from "./Card";
+import { Inset } from "../../ui/Inset";
 import { Swatch } from "./Swatch";
 import { UseColorSchemeGenerator } from "./useColorSchemeGenerator";
 
@@ -8,7 +8,7 @@ type SwatchListProps = {
   generator: UseColorSchemeGenerator;
 };
 export const SwatchList: FC<SwatchListProps> = ({ generator }) => (
-  <Card className="flex flex-wrap m-2">
+  <Inset className="flex flex-wrap">
     {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => (
       <Swatch
         color={chroma.oklch(
@@ -19,5 +19,5 @@ export const SwatchList: FC<SwatchListProps> = ({ generator }) => (
         key={x}
       />
     ))}
-  </Card>
+  </Inset>
 );

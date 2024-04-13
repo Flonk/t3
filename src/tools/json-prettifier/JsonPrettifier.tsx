@@ -49,7 +49,6 @@ export const JsonPrettifier = () => {
           title="Minify"
         />
         <Button
-          className=""
           onClick={() => {
             const output = document.getElementById(
               "output"

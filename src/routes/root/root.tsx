@@ -7,9 +7,9 @@ import "./root.css";
 
 const AppContent = () => {
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center bg-gray-100">
+    <div className="w-screen min-h-screen flex flex-col items-center bg-gray-200">
       <PageHeader />
-      <div className="mt-10 z-0 max-w-screen-huge w-full bg-white border-x border-gray-300 shadow-lg flex">
+      <div className="mt-10 z-0 max-w-screen-xl w-full bg-white shadow-lg flex">
         <PageSidebar />
         <div className="grow">
           <div className="min-h-screen">

@@ -5,7 +5,7 @@ type InsetProps = Styleable & PropsWithChildren;
 
 export const Inset = ({ children, className }: InsetProps) => (
   <div
-    className={`border border-gray-200 p-2 shadow-inner rounded-sm ${className}`}
+    className={`border border-gray-200 p-4 shadow-inner rounded-sm ${className}`}
   >
     {children}
   </div>

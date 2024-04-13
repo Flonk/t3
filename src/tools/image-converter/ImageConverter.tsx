@@ -36,9 +36,12 @@ const DownloadButton = ({ extension, fileName }: DownloadButtonProps) => {
   );
 };
 
-export const ImageConverter = () => {
+type ImageReaderProps = {
+  setFileName: (fileName: string) => void;
+};
+
+const ImageReader = ({ setFileName }: ImageReaderProps) => {
   const dropRef = useRef<HTMLInputElement>(null);
-  const [fileName, setFileName] = useState("");
 
   useEffect(() => {
     if (!dropRef.current) return;
@@ -68,25 +71,32 @@ export const ImageConverter = () => {
       };
       reader.readAsDataURL(file);
     });
-  }, [dropRef]);
+  }, [dropRef, setFileName]);
 
   return (
-    <Page title="QR Code Generator" className="max-w-2xl">
+    <Inset className="mb-4 w-fit relative">
+      <input
+        type="file"
+        className="w-full absolute inset-0 flex items-center justify-center cursor-pointer p-4"
+        ref={dropRef}
+      />
+      <canvas className="max-w-full max-h-[60em]"></canvas>
+    </Inset>
+  );
+};
+
+export const ImageConverter = () => {
+  const [fileName, setFileName] = useState("");
+
+  return (
+    <Page title="Image Converter" className="max-w-2xl">
       <H1 className="w-full mb-0">Image Converter</H1>
       <Caption className="w-full mb-8">
         Supported Formats: .png, .jpeg, .webp
       </Caption>
       <Overline className="w-full">Input</Overline>
-      <input
-        type="file"
-        className="border border-gray-200 p-2 shadow-inner rounded-sm w-full mb-4"
-        ref={dropRef}
-      />
-      <Overline className="w-full">Image</Overline>
       <div className="w-full">
-        <Inset className="mb-4 w-fit">
-          <canvas className="max-w-full max-h-96"></canvas>
-        </Inset>
+        <ImageReader setFileName={setFileName} />
       </div>
       <Overline className="w-full">Download</Overline>
       <div className="flex items-start justify-start w-full">

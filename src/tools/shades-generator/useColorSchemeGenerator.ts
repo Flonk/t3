@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import chroma from "chroma-js";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { ThemedColors, useColors } from "../../ui/ColorsProvider";
 import { drawGradient, graph } from "../../util/canvas";
 import {
   CENTER_LUMINANCE,
@@ -9,7 +10,6 @@ import {
   tailwindLightnessCubic,
 } from "../../util/color";
 import { Fn, fitQuadraticIntoThreePoints } from "../../util/math";
-import { ThemedColors, useColors } from "../../ui/ColorsProvider";
 
 export type ChromaType = "tailwind" | "quadratic" | "linear";
 export type HueType = "quadratic" | "linear";
@@ -49,7 +49,7 @@ export const useColorSchemeGenerator = ({
   chromaRef,
   hueRef,
 }: UseColorSchemeProps) => {
-  const [hue, setHue] = useState(149.58);
+  const [hue, setHue] = useState(64.4);
 
   const [lightnessFn, setLightnessFn] = useState<Fn>(
     () => tailwindLightnessCubic

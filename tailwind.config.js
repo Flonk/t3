@@ -7,17 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        "greensmoke-50": "#f8f8e9",
-        "greensmoke-100": "#f6f7d8",
-        "greensmoke-200": "#eaecbf",
-        "greensmoke-300": "#d8daa3",
-        "greensmoke-400": "#c0c384",
-        "greensmoke-500": "#a5a964",
-        "greensmoke-600": "#898e46",
-        "greensmoke-700": "#6f742a",
-        "greensmoke-800": "#575c0f",
-        "greensmoke-900": "#434900",
-        "greensmoke-950": "#262a01",
+        "pizza-50": "#fef6e8",
+        "pizza-100": "#fff0c9",
+        "pizza-200": "#ffe2a6",
+        "pizza-300": "#fccd7f",
+        "pizza-400": "#e8b358",
+        "pizza-500": "#cf9830",
+        "pizza-600": "#b27c00",
+        "pizza-700": "#956300",
+        "pizza-800": "#784d00",
+        "pizza-900": "#5e3c00",
+        "pizza-950": "#362200",
       },
       maxWidth: {
         "screen-huge": "1920px",

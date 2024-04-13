@@ -6,9 +6,8 @@ import {
   tailwindChromaQuadratic,
 } from "../../util/color";
 import { Fn, fitQuadraticIntoThreePoints } from "../../util/math";
+import { InsetWithGraph } from "./CardWithGraph";
 import { LabeledRange, LabeledSelect, PrimaryButton } from "./LabeledInput";
-import { CardWithGraph } from "./CardWithGraph";
-
 export type ChromaType = "tailwind" | "quadratic";
 type ChromaTypeSelectorProps = {
   chromaType: ChromaType;
@@ -195,13 +194,13 @@ export const ChromaSelector = forwardRef<
   ChromaSelectorProps
 >(({ setChromaFn, baseHue, hueFn, lightnessFn }, ref) => {
   return (
-    <CardWithGraph header="Chroma" ref={ref}>
+    <InsetWithGraph header="Chroma" ref={ref}>
       <ChromaControlSelector
         setChromaFn={setChromaFn}
         hueFn={hueFn}
         baseHue={baseHue}
         lightnessFn={lightnessFn}
       />
-    </CardWithGraph>
+    </InsetWithGraph>
   );
 });

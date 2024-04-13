@@ -12,7 +12,9 @@ export const Page = ({ title, className, children }: PageProps) => {
   }, [title]);
 
   return (
-    <div className={`mx-auto px-8 flex flex-col items-center ${className}`}>
+    <div
+      className={`px-8 py-6 flex flex-col items-center mx-auto lg:mx-0 ${className}`}
+    >
       {children}
     </div>
   );

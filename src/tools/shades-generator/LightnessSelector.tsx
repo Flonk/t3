@@ -2,7 +2,7 @@
 import { FC, forwardRef, useEffect, useState } from "react";
 import { tailwindLightnessCubic } from "../../util/color";
 import { Fn } from "../../util/math";
-import { CardWithGraph } from "./CardWithGraph";
+import { InsetWithGraph } from "./CardWithGraph";
 import { LabeledSelect } from "./LabeledInput";
 
 export type LightnessType = "tailwind" | "linear";
@@ -78,8 +78,8 @@ export const LightnessSelector = forwardRef<
   LightnessSelectorProps
 >(({ setLightnessFn }, ref) => {
   return (
-    <CardWithGraph header="Lightness" ref={ref}>
+    <InsetWithGraph header="Lightness" ref={ref}>
       <LightnessControlSelector setLightnessFn={setLightnessFn} />
-    </CardWithGraph>
+    </InsetWithGraph>
   );
 });

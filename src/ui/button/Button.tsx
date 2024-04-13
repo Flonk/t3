@@ -9,14 +9,14 @@ type BaseButtonProps = Styleable &
   };
 
 const BASE_BUTTON_STYLE = `flex justify-center items-center rounded-sm
-  border border-lime-200 hover:border-lime-800
+  border border-pizza-200 hover:border-pizza-800
   ${TRANSITION_BORDER}
   `;
 
-const BASE_BUTTON_MD_STYLE = `${BASE_BUTTON_STYLE} py-3 px-5 bg-lime-200 text-lime-800
-  active:bg-lime-800 active:text-lime-200
+const BASE_BUTTON_MD_STYLE = `${BASE_BUTTON_STYLE} py-3 px-5 bg-pizza-200 text-pizza-800
+  active:bg-pizza-800 active:text-pizza-200
   `;
-const BASE_BUTTON_SM_STYLE = `${BASE_BUTTON_STYLE} py-1 px-2 bg-transparent border-lime-600`;
+const BASE_BUTTON_SM_STYLE = `${BASE_BUTTON_STYLE} py-1 px-2 bg-transparent border-pizza-600`;
 
 export const BaseButton = ({
   children,

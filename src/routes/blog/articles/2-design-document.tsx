@@ -21,11 +21,6 @@ export const BlogPost_2_DesignDocument = () => {
       <div className="max-w-prose w-full">
         <H1 className="mb-0">{data.title}</H1>
         <Caption className="mb-8">{data.date}</Caption>
-        <Body1>
-          This is a design document for the T3 project. It showcases all UI
-          components used in the project, as well as other design
-          considerations.
-        </Body1>
         <H2>Typography</H2>
         <div className="p-4 rounded-sm border border-gray-200 shadow-inner">
           <H1>Header 1</H1>
